@@ -14,13 +14,13 @@ h4 {
   font-weight: bold;
 }
 
-
+/*main flex container */
 .container {
   display:flex;
   flex-direction: column;
 }
 
-
+/* logo container */
 .topcontainer {
 display: flex;
 justify-content: center;
@@ -35,11 +35,13 @@ background-color: black;
   margin: 0.66rem 0 0.66rem 0.5rem;
 }
 
+/*logo text*/
 p {
   color: white;
   text-align: left;
 }
 
+/*logo image*/
 .logo img {
   vertical-align: middle;
   height: 1.5rem;
@@ -48,6 +50,7 @@ p {
 
 }
 
+/*header container */
 .pageheader {
   display:flex;
   justify-content: center;
@@ -58,8 +61,10 @@ p {
   background-image: url("../../resources/images/moto.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
+/*header copy */
 .headercopy {
   display:flex;
   flex-direction: column;
@@ -74,7 +79,6 @@ p {
   padding: 0 0 2rem 3rem;
   width: 20rem;
   background-color: black;
-
 }
 
 .headercopy h2 {
@@ -83,6 +87,8 @@ p {
   background-color: black;
   width: 20rem;
 }
+
+/*navigation container */
 
 .secondnav {
   display: flex;
@@ -97,11 +103,12 @@ p {
  font-size: 1.0rem;
 }
 
-
+/* mobile navigation (not displayed on desktop) */
 #mobsecondnav {
   display:none;
 }
 
+/* middle section container for products and company info */
 .middlesection {
   display: flex;
   align-items: center;
@@ -109,37 +116,36 @@ p {
   width: 100%;
 }
 
-
-.categories1 {
+/* flex container for products */
+.products {
   display: flex;
   width: 960px;
   justify-content:space-between;
   padding-top: 3rem;
 }
 
-.categories3 {
-  display: flex;
-  width: 960px;
-  justify-content:space-between;
-  padding-top: 3rem;
-}
-
-.categories2 {
-  display: flex;
+/*box for images*/
+.imagebox {
+  height: 9rem;
   width: 100%;
-  height: 5rem;
-  justify-content: center;
-  flex-direction: column;
+}
+
+/* flex container for hours and locations */
+.hourslocation {
+  display: flex;
+  width: 960px;
+  justify-content:space-between;
+  padding-top: 3rem;
+}
+
+/* copy right banner */
+.copyright {
+  width: 100%;
+  padding: 5rem 0;
   background-color: black;
   margin-top: 4rem;
 }
 
-
-
-.box1 {
-  height: 9rem;
-  width: 100%;
-}
 
 
 .bkgimg2 {
@@ -169,6 +175,7 @@ p {
   padding-bottom: 2rem;
 }
 
+/*box around images */
 .image, .imageglasses, .imagewatch {
   display: flex;
   flex-direction: column;
@@ -178,6 +185,7 @@ p {
   height: auto;
 }
 
+/*image label boxes */
 .image p, .imageglasses p, .imagewatch p {
   color: white;
   padding-top: 0.5rem;
@@ -188,7 +196,8 @@ p {
   text-align: center;
 }
 
-.image2 {
+/*headers for company info */
+.infoheader {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,16 +206,7 @@ p {
   background-color: black;
 }
 
-.image3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-  padding-left: 2rem;
-  background-color: black;
-}
-
-.image2 p {
+.infoheader p {
   color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -215,40 +215,54 @@ p {
   text-align: left;
 }
 
-.image3 p {
+/*copywright box and copy */
+.copyrighttext {
+  height: auto;
+  padding-left: 2rem;
+  background-color: black;
+}
+
+.copyrighttext p {
   color: white;
   width: 100%;
   text-align: left;
 }
+
+/*tablet css */
 
 @media only screen and (max-width: 1024px) {
   .image, .imageglasses, .imagewatch {
     width: 47%;
   }
 
+/*last image not displayed on sizes between tablet and mobile */
   .imageglasses {
       display: none;
   }
 
+/*desktop menu not displayed on mobile */
   #desktopmenu {
      display: none;
   }
 
+/*mobile menu displayed on sizes tablet and under */
   #mobsecondnav {
     display:block;
   }
 
-  .categories1, .categories3 {
+/*keeps middle section container same size when resizing for tablet and under */
+  .products, .hourslocation {
   width: calc(100% - 100px);
   }
 
 }
 
+/*mobile css */
 @media only screen and (max-width: 470px) {
   .image, .imageglasses, .imagewatch {
     width: 90%;
   }
-
+/*last two images not displayed on mobile*/
   .imageglasses, .imagewatch {
       display: none;
   }
@@ -261,17 +275,18 @@ p {
     display:block;
   }
 
-  .categories1 {
+  .products {
   width: calc(100% - 100px);
   justify-content: center;
   }
 
-  .categories3 {
+/*display company info headers on two separate linese*/
+  .hourslocation {
   justify-content: center;
   flex-wrap: wrap;
   }
 
-  .image2 {
+  .infoheader {
     width: 90%;
     margin-top:1rem;
   }
@@ -297,8 +312,12 @@ p {
     height: 19rem;
   }
 
-  .image3 p {
+  .copyrighttext p {
     text-align: center;
+  }
+
+  .copyrighttext{
+    padding-left: 0px;
   }
 
 }
